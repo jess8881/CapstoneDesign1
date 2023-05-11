@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Grammar Checker</title>
+  </head>
+  <body>
+    <h1>Grammar Checker</h1>
+    <form action="/submit" method="post">
+      <textarea name="user_input"></textarea>
+      <br>
+      <label for="purpose">Purpose:</label>
+      <select name="purpose">
+        <option value="resume">Resume</option>
+        <option value="business_email">Business Email</option>
+        <option value="assignment">Assignment</option>
+        <option value="blog_post">Blog Post</option>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
