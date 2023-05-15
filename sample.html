@@ -5,18 +5,14 @@
   </head>
   <body>
     <h1>Grammar Checker</h1>
-    <form action="/submit" method="post">
-      <textarea name="user_input"></textarea>
+    <form method="POST">
+      <textarea name="text" rows="10" cols="50"></textarea>
       <br>
-      <label for="purpose">Purpose:</label>
-      <select name="purpose">
-        <option value="resume">Resume</option>
-        <option value="business_email">Business Email</option>
-        <option value="assignment">Assignment</option>
-        <option value="blog_post">Blog Post</option>
-      </select>
       <br>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Correct">
     </form>
+    {% if corrected_text %}
+      <p>{{ corrected_text }}</p>
+    {% endif %}
   </body>
 </html>
