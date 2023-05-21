@@ -6,17 +6,14 @@
 <body>
     <h1>Grammar Correction</h1>
     <form method="POST" action="/">
-        <textarea name="text" rows="10" cols="100" placeholder="Enter text to correct">{{ text }}</textarea>
+        <textarea id="input_text" name="input_text" rows="10" cols="100" placeholder="Enter text to correct">{{ input_text }}</textarea>
         <br>
         <button type="submit">Correct Grammar</button>
+        <h3>Corrected Text:</h3>
+        <textarea id="output_text" rows="10" cols="100" readonly>{{ output_text }}</textarea>
+        <button id="copy">copy</button>
     </form>
-    {% if corrected_text %}
-    <h3>Corrected Text:</h3>
-    <textarea id ="result" rows="10" cols="100" placeholder="Corrected text" readonly>{{ corrected_text }}</textarea>
-    <button id="copy">copy</button>
-    {% endif %}
 
-    <!--복사 버튼-->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
