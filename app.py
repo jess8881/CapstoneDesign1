@@ -45,9 +45,9 @@ def home():
         if action == "resume":
             response = openai.Completion.create(
                 engine="text-davinci-003",
-                prompt=f"Read my resume and give me three example sentences for my resume: '{input_text}'",
+                prompt=f"Read my resume and give me an example sentences for my resume: '{input_text}'",
                 max_tokens=200,
-                n=1,
+                n=3,
                 stop=None,
                 temperature=0.7,
             )
@@ -55,9 +55,9 @@ def home():
         elif action == "report":
             response = openai.Completion.create(
                 engine="text-davinci-003",
-                prompt=f"Read my report for University and give me three example sentences for my report: '{input_text}'",
+                prompt=f"Read my report for University and give me an example sentences for my report: '{input_text}'",
                 max_tokens=200,
-                n=1,
+                n=3,
                 stop=None,
                 temperature=0.7,
             )
@@ -65,9 +65,9 @@ def home():
         elif action == "blog_post":
             response = openai.Completion.create(
                 engine="text-davinci-003",
-                prompt=f"Read my blog post and give me three example sentences for my blog post: '{input_text}'",
+                prompt=f"Read my blog post and give me an example sentences for my blog post: '{input_text}'",
                 max_tokens=200,
-                n=1,
+                n=3,
                 stop=None,
                 temperature=0.7,
             )
@@ -80,7 +80,6 @@ def home():
         previous_recommendations = recommendations
 
     return render_template("sample.html", input_text=input_text, output_text=previous_output_text, recommendations=previous_recommendations)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

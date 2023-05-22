@@ -19,14 +19,12 @@
         <button type="submit" name="action" value="blog_post">블로그</button>
     </form>
 
-    {% if recommendations %}
     <h2>예시 문장 추천 받기</h2>
     <ul>
         {% for recommendation in recommendations %}
-        <li>{{ recommendation }}</li>
+        <li>{{ recommendation | safe }}</li><br>
         {% endfor %}
     </ul>
-    {% endif %}
 
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
