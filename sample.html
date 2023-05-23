@@ -5,29 +5,48 @@
 
 </head>
 <body>
-    <h1>Grammar Correction</h1>
-    <form method="POST" action="/">
-        <textarea id="input_text" name="input_text" rows="10" cols="100" placeholder="Enter text to correct">{{ input_text }}</textarea>
-        <br>
-        <button type="submit" name="action" value="correct_grammar">Correct Grammar</button>
-        <h3>Corrected Text:</h3>
-        <textarea id="output_text" rows="10" cols="100" readonly>{{ output_text }}</textarea>
-        <button type="button" id="copy">copy</button>
-        <br>
-        <button type="submit" name="action" value="resume">이력서</button>
-        <button type="submit" name="action" value="report">과제</button>
-        <button type="submit" name="action" value="blog_post">블로그</button>
-    </form>
+    <header></header>
+    <section class="banner"></section>
 
-    <h2>예시 문장 추천 받기</h2>
-    <ul>
-        {% for recommendation in recommendations %}
-        <li>{{ recommendation | safe }}</li><br>
-        {% endfor %}
-    </ul>
+
+    <section class="grammar_checker">
+        <h1>Grammar Correction</h1>
+        <form method="POST" action="/">
+            <textarea id="input_text" name="input_text" rows="10" cols="100" placeholder="Enter text to correct">{{ input_text }}</textarea>
+            <br>
+            <button type="submit" name="action" value="correct_grammar">Correct Grammar</button>
+            <h3>Corrected Text:</h3>
+            <textarea id="output_text" rows="10" cols="100" readonly>{{ output_text }}</textarea>
+            <button type="button" id="copy">copy</button>
+            <br>
+            <button type="submit" name="action" value="resume">이력서</button>
+            <button type="submit" name="action" value="report">과제</button>
+            <button type="submit" name="action" value="blog_post">블로그</button>
+        </form>
+    </section>
+
+    <section class="sentence_recommendor">
+        <h2>예시 문장 추천 받기</h2>
+        <ul>
+            {% for recommendation in recommendations %}
+            <li>{{ recommendation | safe }}</li><br>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+
+
+
+
+    <section class="help"></section>
+
+    <footer></footer>
 
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
 
 </body>
 </html>
